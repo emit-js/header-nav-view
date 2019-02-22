@@ -16,7 +16,7 @@
   "homepage": "https://github.com/dot-event/header-nav-view#readme",
   "main": "navbar.js",
   "scripts": {
-    "build": "babel *.jsx --out-dir dist --source-maps",
+    "build": "babel *.jsx *.js --out-dir dist --source-maps",
     "fix": "npm run lint -- --fix",
     "lint": "eslint --ignore-path .gitignore --ext=js .",
     "prepublishOnly": "npm run build",
@@ -26,9 +26,7 @@
     "watch": "babel *.jsx --watch --out-dir dist --source-maps"
   },
   "dependencies": {
-    "@babel/runtime": "7.2.0",
-    "@dot-event/css": "0.0.1",
-    "node-sass": "4.11.0"
+    "@babel/runtime": "7.2.0"
   },
   "devDependencies": {
     "@babel/cli": "7.2.3",
@@ -41,6 +39,7 @@
     "@babel/preset-react": "7.0.0",
     "@babel/runtime": "7.2.0",
     "@dot-event/controller": "0.0.4",
+    "@dot-event/css": "0.0.1",
     "@dot-event/el": "0.0.6",
     "@dot-event/log": "1.0.12",
     "@dot-event/render": "0.0.10",
@@ -55,6 +54,7 @@
     "husky": "1.3.1",
     "jest": "24.1.0",
     "lint-staged": "8.1.3",
+    "node-sass": "4.11.0",
     "prettier": "1.16.4",
     "webpack": "4.28.4",
     "webpack-cli": "3.2.1"
@@ -63,7 +63,23 @@
     "watchman": {
       "triggers": [
         {
-          "name": "babel",
+          "name": "js",
+          "expression": [
+            "anyof",
+            [
+              "match",
+              "*.js",
+              "wholename"
+            ]
+          ],
+          "command": [
+            "npm",
+            "run",
+            "build"
+          ]
+        },
+        {
+          "name": "jsx",
           "expression": [
             "anyof",
             [

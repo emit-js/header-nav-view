@@ -2,7 +2,7 @@ var path = require("path")
 
 module.exports = {
   entry: {
-    testClient: "./test/testClient",
+    headerNavTestClient: "./test/headerNavTestClient",
   },
   output: {
     filename: "[name].js",
