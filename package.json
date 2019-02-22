@@ -16,14 +16,13 @@
   "homepage": "https://github.com/dot-event/header-nav-view#readme",
   "main": "navbar.js",
   "scripts": {
-    "build": "babel *.jsx *.js --out-dir dist --source-maps",
+    "build": "babel *.jsx test/page --out-dir dist --source-maps",
     "fix": "npm run lint -- --fix",
     "lint": "eslint --ignore-path .gitignore --ext=js .",
     "prepublishOnly": "npm run build",
     "pretty": "prettier --write **/*.css **/*.json **/*.md",
     "sass": "node-sass *.scss --follow --output dist --source-maps",
-    "test": "webpack --mode=production --config test/webpack.config.js; jest; open dist/headerNavTest.html",
-    "watch": "babel *.jsx --watch --out-dir dist --source-maps"
+    "test": "webpack --mode=production --config test/webpack.config.js; jest; open dist/headerNavTest.html"
   },
   "dependencies": {
     "@babel/runtime": "7.2.0"

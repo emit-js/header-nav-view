@@ -13,7 +13,7 @@ function render(prop, arg, dot) {
       <head />
       <body>
         {headerNavView(prop, arg, dot)}
-        <script src="headerNavTestClient.js" />
+        <script src="headerNavTestClientBundle.js" />
       </body>
     </html>
   )
