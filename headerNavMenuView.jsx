@@ -1,10 +1,14 @@
 /** @jsx dot.el */
 
 module.exports = function(dot) {
-  dot.view("headerNavMenuView", { render })
+  dot.any(
+    "headerNavMenuViewRender",
+    headerNavMenuViewRender
+  )
+  dot.view("headerNavMenuView")
 }
 
-function render(prop, { menu }, dot) {
+function headerNavMenuViewRender(prop, { menu }, dot) {
   return (
     <span id={prop} onClick={toggleMenu.bind(prop)}>
       {menu}

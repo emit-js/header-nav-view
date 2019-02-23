@@ -2,10 +2,13 @@
 
 module.exports = function(dot) {
   require("./headerNavMenuView")(dot)
-  dot.view("headerNavView", { render, update })
+
+  dot.any("headerNavViewRender", headerNavViewRender)
+  dot.any("headerNavViewUpdate", headerNavViewUpdate)
+  dot.view("headerNavView")
 }
 
-function render(prop, arg, dot) {
+function headerNavViewRender(prop, arg, dot) {
   const { items, logo, menu } = arg
 
   return (
@@ -23,6 +26,6 @@ function render(prop, arg, dot) {
   )
 }
 
-function update(prop, { menu }, dot) {
+function headerNavViewUpdate(prop, { menu }, dot) {
   dot.headerNavMenuView(prop, { menu })
 }

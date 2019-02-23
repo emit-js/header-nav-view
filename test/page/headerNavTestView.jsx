@@ -1,13 +1,18 @@
 /** @jsx dot.el */
 
 module.exports = function(dot) {
-  dot.view("headerNavTestView", {
-    render: render,
-    update: update,
-  })
+  dot.any(
+    "headerNavTestViewRender",
+    headerNavTestViewRender
+  )
+  dot.any(
+    "headerNavTestViewUpdate",
+    headerNavTestViewUpdate
+  )
+  dot.view("headerNavTestView")
 }
 
-function render(prop, arg, dot) {
+function headerNavTestViewRender(prop, arg, dot) {
   return (
     <html id={prop}>
       <head />
@@ -19,10 +24,6 @@ function render(prop, arg, dot) {
   )
 }
 
-function update(prop, arg, dot) {
-  headerNavView(prop, arg, dot)
-}
-
 function headerNavView(prop, arg, dot) {
   return dot.headerNavView(prop, {
     items: [
@@ -32,4 +33,8 @@ function headerNavView(prop, arg, dot) {
     logo: "logo",
     menu: "menu",
   })
+}
+
+function headerNavTestViewUpdate(prop, arg, dot) {
+  headerNavView(prop, arg, dot)
 }
