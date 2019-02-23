@@ -1,10 +1,10 @@
 /** @jsx dot.el */
 
 module.exports = function(dot) {
-  dot.controller("headerNavTestPage", testPage)
+  dot.controller("headerNavTestPage", headerNavTestPage)
 }
 
-function testPage(prop, arg) {
+function headerNavTestPage(prop, arg) {
   var dot = require("./headerNavTestDot")()
 
   require("./headerNavTestView")(dot)
