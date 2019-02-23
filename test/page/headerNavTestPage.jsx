@@ -5,7 +5,7 @@ module.exports = function(dot) {
 }
 
 function headerNavTestPage(prop, arg) {
-  var dot = require("./headerNavTestDot")()
+  const dot = require("./headerNavTestDot")()
 
   require("./headerNavTestView")(dot)
   require("./headerNavView")(dot)

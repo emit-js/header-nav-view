@@ -39,7 +39,7 @@
     "@babel/runtime": "7.2.0",
     "@dot-event/controller": "0.0.4",
     "@dot-event/css": "0.0.1",
-    "@dot-event/el": "0.0.6",
+    "@dot-event/el": "0.0.7",
     "@dot-event/log": "1.0.12",
     "@dot-event/render": "0.0.10",
     "@dot-event/view": "0.0.21",

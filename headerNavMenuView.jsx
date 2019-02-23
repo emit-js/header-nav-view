@@ -1,6 +1,7 @@
 /** @jsx dot.el */
 
 module.exports = function(dot) {
+  dot.any("headerNavMenuViewClick", headerNavMenuViewClick)
   dot.any(
     "headerNavMenuViewRender",
     headerNavMenuViewRender
@@ -8,19 +9,19 @@ module.exports = function(dot) {
   dot.view("headerNavMenuView")
 }
 
-function headerNavMenuViewRender(prop, { menu }, dot) {
+function headerNavMenuViewRender(prop, arg, dot) {
+  const { menu } = arg,
+    onClick = dot.headerNavMenuViewClick.bind(null, prop)
+
   return (
-    <span id={prop} onClick={toggleMenu.bind(prop)}>
+    <span id={prop} onClick={onClick}>
       {menu}
     </span>
   )
 }
 
-function toggleMenu() {
-  const prop = this
-  const parentProp = prop.slice(0, -1)
-  const itemsId = [...parentProp, "items"].join(".")
-  const items = document.getElementById(itemsId)
+function headerNavMenuViewClick(prop, arg, dot) {
+  const items = dot.elFind(prop, "items", [-2, 1])
   const classList = items.classList
 
   if (classList.contains("active")) {
