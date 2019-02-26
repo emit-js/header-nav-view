@@ -1,17 +1,17 @@
 /* eslint-env jest */
 /** @jsx dot.el */
 
-var dot = require("../dist/headerNavTestDot")()
+var dot = require("../dist/testDot")()
 
 require("@dot-event/render")(dot)
-require("../dist/headerNavTestPage")(dot)
+require("../dist/testPage")(dot)
 
-test("headerNavTestPage", function() {
+test("build headerNavView test page", function() {
   return dot.render({
     outDir: "./dist",
     views: {
       "headerNavTest.html": {
-        event: "headerNavTestPage",
+        event: "testPage",
       },
     },
   })

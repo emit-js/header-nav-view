@@ -1,24 +1,18 @@
 /** @jsx dot.el */
 
 module.exports = function(dot) {
-  dot.any(
-    "headerNavTestViewRender",
-    headerNavTestViewRender
-  )
-  dot.any(
-    "headerNavTestViewUpdate",
-    headerNavTestViewUpdate
-  )
-  dot.view("headerNavTestView")
+  dot.any("testViewRender", testViewRender)
+  dot.any("testViewUpdate", testViewUpdate)
+  dot.view("testView")
 }
 
-function headerNavTestViewRender(prop, arg, dot) {
+function testViewRender(prop, arg, dot) {
   return (
     <html id={prop}>
       <head />
       <body>
         {headerNavView(prop, arg, dot)}
-        <script src="headerNavTestClientBundle.js" />
+        <script src="testClientBundle.js" />
       </body>
     </html>
   )
@@ -35,6 +29,6 @@ function headerNavView(prop, arg, dot) {
   })
 }
 
-function headerNavTestViewUpdate(prop, arg, dot) {
+function testViewUpdate(prop, arg, dot) {
   headerNavView(prop, arg, dot)
 }

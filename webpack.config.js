@@ -1,5 +1,5 @@
 module.exports = {
   entry: {
-    headerNavTestClientBundle: "./dist/headerNavTestClient",
+    testClientBundle: "./dist/testClient",
   },
 }

@@ -22,13 +22,9 @@ function headerNavMenuViewRender(prop, arg, dot) {
 
 function headerNavMenuViewClick(prop, arg, dot) {
   const items = dot.elFind(prop, "items", [-2, 1])
-  const classList = items.classList
+  const active = dot.get(prop)
 
-  if (classList.contains("active")) {
-    items.style.display = "none"
-    classList.remove("active")
-  } else {
-    items.style.display = "flex"
-    classList.add("active")
-  }
+  dot.set(prop, !active)
+
+  items.style.display = active ? "none" : "flex"
 }
