@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/dot-event/header-nav-view#readme",
-  "main": "navbar.js",
+  "main": "dist/headerNavView.js",
   "scripts": {
     "build": "babel *.jsx test/page --out-dir dist --source-maps",
     "fix": "npm run lint -- --fix",
