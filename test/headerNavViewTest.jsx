@@ -4,7 +4,7 @@
 var dot = require("./page/testDot")()
 
 require("@dot-event/render")(dot)
-require("./page/testPage")(dot)
+require("../dist/testPage")(dot)
 
 test("build headerNavView test page", function() {
   return dot.render({

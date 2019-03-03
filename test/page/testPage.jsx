@@ -8,7 +8,7 @@ function testPage(prop, arg) {
   const dot = require("./testDot")()
 
   require("./testView")(dot)
-  require("../../")(dot)
+  require("../")(dot)
 
   dot.testView(prop, { element: arg.element })
 
