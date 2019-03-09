@@ -21,7 +21,8 @@ function headerNavMenuViewRender(prop, arg, dot) {
 }
 
 function headerNavMenuViewClick(prop, arg, dot) {
-  const items = dot.elFind(prop, "items", [-2, 1])
+  const parentProp = prop.slice(-1)
+  const items = dot.elFind(parentProp, "items")
   const active = dot.get(prop)
 
   dot.set(prop, !active)
