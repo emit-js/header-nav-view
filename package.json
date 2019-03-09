@@ -22,7 +22,7 @@
     "prepublishOnly": "npm run build",
     "pretty": "prettier --write **/*.css **/*.json **/*.md",
     "sass": "node-sass *.scss --follow --output dist --source-maps",
-    "test": "webpack --mode=production; jest; open dist/headerNavTest.html"
+    "test": "npm run build; webpack --mode=production; jest; open dist/headerNavTest.html"
   },
   "dependencies": {
     "@babel/runtime": "7.3.4"
