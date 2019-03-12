@@ -16,7 +16,7 @@
   "homepage": "https://github.com/dot-event/header-nav-view#readme",
   "main": "dist/headerNavView.js",
   "scripts": {
-    "build": "babel *.jsx test/page --out-dir dist --source-maps",
+    "build": "rm -rf dist; babel *.jsx test/page --out-dir dist --source-maps",
     "fix": "npm run lint -- --fix",
     "lint": "eslint --ignore-path .gitignore --ext=js .",
     "prepublishOnly": "npm run build",
