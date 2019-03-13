@@ -40,7 +40,7 @@
     "@dot-event/controller": "0.0.12",
     "@dot-event/css": "0.0.3",
     "@dot-event/el": "0.0.9",
-    "@dot-event/log": "1.0.26",
+    "@dot-event/log": "1.0.27",
     "@dot-event/render": "0.0.18",
     "@dot-event/store": "7.0.15",
     "@dot-event/view": "0.0.29",
