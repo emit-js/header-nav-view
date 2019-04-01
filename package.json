@@ -59,60 +59,6 @@
     "webpack": "4.28.4",
     "webpack-cli": "3.2.1"
   },
-  "operations": {
-    "watchman": {
-      "triggers": [
-        {
-          "name": "js",
-          "expression": [
-            "anyof",
-            [
-              "match",
-              "*.js",
-              "wholename"
-            ]
-          ],
-          "command": [
-            "npm",
-            "run",
-            "build"
-          ]
-        },
-        {
-          "name": "jsx",
-          "expression": [
-            "anyof",
-            [
-              "match",
-              "*.jsx",
-              "wholename"
-            ]
-          ],
-          "command": [
-            "npm",
-            "run",
-            "build"
-          ]
-        },
-        {
-          "name": "sass",
-          "expression": [
-            "anyof",
-            [
-              "match",
-              "*.scss",
-              "wholename"
-            ]
-          ],
-          "command": [
-            "npm",
-            "run",
-            "sass"
-          ]
-        }
-      ]
-    }
-  },
   "babel": {
     "presets": [
       [
