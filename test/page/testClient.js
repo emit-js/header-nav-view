@@ -1,5 +1,5 @@
-const dot = require("./testDot")()
+const emit = require("./testDot")()
 
-require("./testPage")(dot)
+require("./testPage")(emit)
 
-dot.testPage({ element: document.documentElement })
+emit.testPage({ element: document.documentElement })

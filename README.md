@@ -1,3 +1,3 @@
-# @dot-event/header-nav-view
+# @emit-js/header-nav-view
 
-[dot-event](https://github.com/dot-event/dot-event#readme) header & nav view
+[emit](https://github.com/emit-js/emit#readme) header & nav view

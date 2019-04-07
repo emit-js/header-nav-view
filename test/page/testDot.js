@@ -1,12 +1,14 @@
 module.exports = function() {
-  const dot = require("dot-event")()
+  const emit = require("@emit-js/emit")()
 
-  require("@dot-event/log")(dot)
-  require("@dot-event/controller")(dot)
-  require("@dot-event/css")(dot)
-  require("@dot-event/el")(dot)
-  require("@dot-event/store")(dot)
-  require("@dot-event/view")(dot)
+  require("@emit-js/log")(emit)
+  require("@emit-js/controller")(emit)
+  require("@emit-js/css")(emit)
+  require("@emit-js/el")(emit)
+  require("@emit-js/store")(emit)
+  require("@emit-js/view")(emit)
 
-  return dot
+  emit("logLevel", "debug")
+
+  return emit
 }

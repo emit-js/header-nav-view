@@ -1,25 +1,25 @@
-/** @jsx dot.el */
+/** @jsx emit.el */
 
-module.exports = function(dot) {
-  dot.any("testViewRender", testViewRender)
-  dot.any("testViewUpdate", testViewUpdate)
-  dot.view("testView")
+module.exports = function(emit) {
+  emit.any("testViewRender", testViewRender)
+  emit.any("testViewUpdate", testViewUpdate)
+  emit.view("testView")
 }
 
-function testViewRender(prop, arg, dot) {
+function testViewRender(arg, prop, emit) {
   return (
     <html id={prop}>
       <head />
       <body>
-        {headerNavView(prop, arg, dot)}
+        {headerNavView(arg, prop, emit)}
         <script src="testClientBundle.js" />
       </body>
     </html>
   )
 }
 
-function headerNavView(prop, arg, dot) {
-  return dot.headerNavView(prop, {
+function headerNavView(arg, prop, emit) {
+  return emit.headerNavView(prop, {
     items: [
       <a href="#">List item 1</a>,
       <a href="#">List item 2</a>,
@@ -29,6 +29,6 @@ function headerNavView(prop, arg, dot) {
   })
 }
 
-function testViewUpdate(prop, arg, dot) {
-  headerNavView(prop, arg, dot)
+function testViewUpdate(arg, prop, emit) {
+  headerNavView(arg, prop, emit)
 }

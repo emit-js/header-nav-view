@@ -1,26 +1,26 @@
-/** @jsx dot.el */
+/** @jsx emit.el */
 
-module.exports = function(dot) {
-  if (dot.headerNavView) {
+module.exports = function(emit) {
+  if (emit.headerNavView) {
     return
   }
 
-  require("./headerNavMenuView")(dot)
+  require("./headerNavMenuView")(emit)
 
-  dot.any("headerNavViewRender", headerNavViewRender)
-  dot.any("headerNavViewUpdate", headerNavViewUpdate)
+  emit.any("headerNavViewRender", headerNavViewRender)
+  emit.any("headerNavViewUpdate", headerNavViewUpdate)
 
-  dot.view("headerNavView")
+  emit.view("headerNavView")
 }
 
-function headerNavViewRender(prop, arg, dot) {
+function headerNavViewRender(arg, prop, emit) {
   const { items, logo, menu } = arg
 
   return (
     <header id={prop}>
       {logo}
       <nav>
-        {dot.headerNavMenuView(prop, { menu })}
+        {emit.headerNavMenuView(prop, { menu })}
         {items && (
           <ul id={[...prop, "items"]}>
             {items && items.map(item => <li>{item}</li>)}
@@ -31,6 +31,6 @@ function headerNavViewRender(prop, arg, dot) {
   )
 }
 
-function headerNavViewUpdate(prop, { menu }, dot) {
-  dot.headerNavMenuView(prop, { menu })
+function headerNavViewUpdate(arg, prop, emit) {
+  emit.headerNavMenuView(prop, { menu: arg.menu })
 }

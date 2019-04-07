@@ -1,20 +1,20 @@
-/** @jsx dot.el */
+/** @jsx emit.el */
 
-module.exports = function(dot) {
-  dot.controller("testPage", testPage)
+module.exports = function(emit) {
+  emit.controller("testPage", testPage)
 }
 
-function testPage(prop, arg) {
-  const dot = require("./testDot")()
+function testPage(arg, prop) {
+  const emit = require("./testDot")()
 
-  require("./testView")(dot)
-  require("../")(dot)
+  require("./testView")(emit)
+  require("../")(emit)
 
-  dot.testView(prop, { element: arg.element })
+  emit.testView(prop, { element: arg.element })
 
   if (arg.path) {
-    dot.css(prop, { href: "headerNav.css" })
+    emit.css(prop, { href: "headerNav.css" })
   }
 
-  return dot
+  return emit
 }
